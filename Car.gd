@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var initial_pos = position.x
 var moving = false
+var unitBlock = 16
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,17 +16,27 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if moving and position.x >= initial_pos + (3 * 64):
-		moving = false
-		stop_moving()
+	if moving:
+		#AnimatedSprite.play("go_right")
+		position.x += unitBlock
+		if position.x >= initial_pos + (3 * unitBlock):
+			stop_moving()
 
+func _fixed_process():
+	if moving:
+		#AnimatedSprite.play("go_right")
+		position.x += unitBlock
+		if position.x >= initial_pos + (3 * unitBlock):
+			stop_moving()
 
 func stop_moving():
-	applied_force = Vector2(0, 0)
+	moving = false
+	$AnimatedSprite.stop()
 
 
 func trigger_move_right():
 	print("triggered")
 	initial_pos = position.x
 	moving = true
-	applied_force = Vector2(200, 0)
+	#while position.x < initial_pos + (3 * unitBlock):#(abs(position.x - initial_pos) < (3 * unitBlock)):
+	#	position.x += unitBlock

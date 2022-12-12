@@ -1,5 +1,6 @@
 extends Node2D
 
+var unitBlock = 64
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,5 +20,5 @@ func _ready():
 func _on_Cloud_lightning():
 	print("main triggered")
 	print($Cloud.position.x, " ", $Car.position)
-	if abs($Cloud.position.x - $Car.position.x) < 64:
+	if abs($Cloud.position.x - $Car.position.x) < unitBlock:
 		$Car.trigger_move_right()
