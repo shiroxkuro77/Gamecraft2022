@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cloud 1.PNG-8b7f9384810c559a99d96722580b134a.stex"
+path="res://.import/car-3.png-b3e494068eb043db0ba1dfe063349f6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/Objects/cloud 1.PNG"
-dest_files=[ "res://.import/cloud 1.PNG-8b7f9384810c559a99d96722580b134a.stex" ]
+source_file="res://assets/car/car-3.png"
+dest_files=[ "res://.import/car-3.png-b3e494068eb043db0ba1dfe063349f6c.stex" ]
 
 [params]
 

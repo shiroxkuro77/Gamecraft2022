@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mine.png-531455825e6318fafaaaaa78df2edc0c.stex"
+path="res://.import/cloud lighting.png-f1ea2092a0be25ebe0c2272adae80fca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/Social/Mine.png"
-dest_files=[ "res://.import/Mine.png-531455825e6318fafaaaaa78df2edc0c.stex" ]
+source_file="res://assets/Objects/cloud lighting.png"
+dest_files=[ "res://.import/cloud lighting.png-f1ea2092a0be25ebe0c2272adae80fca.stex" ]
 
 [params]
 
