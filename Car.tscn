@@ -13,7 +13,7 @@ extents = Vector2( 33, 33 )
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "go_right",
 "speed": 5.0
 } ]
 
@@ -33,3 +33,4 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
+animation = "go_right"
