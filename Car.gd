@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 onready var ground_ray = get_node("GroundRay2D");
+onready var front_ray = get_node("FrontRay2D");
 var initial_pos = position.x
 var moving = false
 var unitBlock = 16
@@ -23,13 +24,14 @@ func _timer(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if _timer(delta):
-		if moving:
+		if not ground_ray.is_colliding():
+			position.y += unitBlock
+		elif moving and not front_ray.is_colliding():
 			#AnimatedSprite.play("go_right")
 			position.x += unitBlock
 			if position.x >= initial_pos + (moveSteps * unitBlock):
 				stop_moving()
-		if not ground_ray.is_colliding():
-			position.y += unitBlock
+
 
 func stop_moving():
 	moving = false
