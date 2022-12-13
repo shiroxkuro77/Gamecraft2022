@@ -166,5 +166,3 @@ gravity_scale = 0.0
 position = Vector2( 307, 430 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
-
-[connection signal="lightning" from="Cloud" to="." method="_on_Cloud_lightning"]

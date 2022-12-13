@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Cloud",
+"language": "GDScript",
+"path": "res://Cloud.gd"
+}, {
+"base": "Cloud",
+"class": "LightningCloud",
+"language": "GDScript",
+"path": "res://LightningCloud.gd"
+}, {
+"base": "Cloud",
+"class": "TreeCloud",
+"language": "GDScript",
+"path": "res://TreeCloud.gd"
+} ]
+_global_script_class_icons={
+"Cloud": "",
+"LightningCloud": "",
+"TreeCloud": ""
+}
+
 [application]
 
 config/name="Gamecraft 2022"
