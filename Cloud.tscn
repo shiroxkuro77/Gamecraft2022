@@ -26,6 +26,7 @@ script = ExtResource( 2 )
 script = ExtResource( 11 )
 
 [node name="TreeCloud" type="Node2D" parent="StateManager"]
+visible = false
 script = ExtResource( 9 )
 
 [node name="SpriteCloudTree" type="Sprite" parent="StateManager/TreeCloud"]
@@ -36,7 +37,6 @@ texture = ExtResource( 7 )
 cast_to = Vector2( 0, 16 )
 
 [node name="LightningCloud" type="Node2D" parent="StateManager"]
-visible = false
 script = ExtResource( 10 )
 
 [node name="LightningTimer" type="Timer" parent="StateManager/LightningCloud"]
