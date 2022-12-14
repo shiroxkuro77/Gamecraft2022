@@ -39,7 +39,6 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="SpriteSeed" type="Sprite" parent="RigidBody2D"]
-scale = Vector2( 0.260246, 0.240108 )
 z_index = -1
 texture = ExtResource( 1 )
 
