@@ -29,11 +29,22 @@ __meta__ = {
 position = Vector2( 0.25, -1 )
 scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 1 )
+disabled = true
+
+[node name="CollideRay2D" type="RayCast2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+enabled = true
+cast_to = Vector2( 0, -12 )
 
 [node name="GroundRay2D" type="RayCast2D" parent="."]
 scale = Vector2( 0.25, 0.25 )
 enabled = true
 cast_to = Vector2( 0, 64 )
+
+[node name="FrontRay2D" type="RayCast2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+enabled = true
+cast_to = Vector2( 64, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
