@@ -16,9 +16,12 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_LightningCloud_lightning():
 	print("main triggered")
 	print($LightningCloud.position.x, " ", $Car.position)
 	if abs($LightningCloud.position.x - $Car.position.x) < unitBlock:
 		$Car.trigger_move_right()
+
+
+func _on_Cloud_lightning():
+	pass # Replace with function body.

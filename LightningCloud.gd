@@ -1,6 +1,5 @@
 extends Cloud
 
-signal lightning
 
 class_name LightningCloud
 

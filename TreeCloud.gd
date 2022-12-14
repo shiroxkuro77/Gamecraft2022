@@ -30,5 +30,5 @@ func _process(delta):
 		
 func shoot():
 	var bullet = bulletPath.instance()
-	get_parent().add_child(bullet)
+	get_parent().get_parent().add_child(bullet)
 	bullet.position = self.global_position

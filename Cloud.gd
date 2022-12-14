@@ -1,8 +1,11 @@
 extends Node2D
 
 class_name Cloud
+signal switch
+signal lightning
 
 # Declare member variables here. Examples:
+
 var unitBlock = 16
 var time = 0
 const TIME_PERIOD = 0.1
@@ -22,7 +25,7 @@ func _timer(delta):
 func _process(delta):		
 	if Input.is_action_pressed("move_left"):
 		print(position.x)
-		if position.x > 32:
+		if position.x > -12:
 			if _timer(delta):
 				position.x -= unitBlock
 	elif Input.is_action_pressed("move_right"):
@@ -30,9 +33,5 @@ func _process(delta):
 		if position.x < OS.get_screen_size().x - 32:
 			if _timer(delta):
 				position.x += unitBlock
-
-
-func setup(change_state, animated_sprite, persistent_state):
-	self.change_state = change_state
-	self.animated_sprite = animated_sprite
-	self.persistent_state = persistent_state
+	elif Input.is_action_just_released("ui_up"):
+		emit_signal("switch")
