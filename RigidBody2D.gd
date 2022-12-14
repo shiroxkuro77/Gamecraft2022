@@ -6,6 +6,7 @@ var currPos
 var isMoving = true
 var time = 0
 var TIME_PERIOD = 0.1
+var touchGround = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,13 +32,9 @@ func _process(delta):
 			isMoving = true
 
 		if not isMoving:
-			#for child in get_parent().get_children():
-			#	for child2 in child.get_children():
-			#		if child2 is CollisionShape2D:
-			#			child2.disabled = false 
-			#		print(child2)
-			#	child.position = self.position
-			#	child.visible = true
+			
+			if not touchGround:
+				get_parent().queue_free()
 			var savePosition = self.position
 			if $SpriteG1.visible  == true:
 				$SpriteG2.visible = true
@@ -61,3 +58,7 @@ func _on_Area2DNG_body_entered(body):
 		
 		pass#if body.position.y > $Area2DNG/CollisionShapeG3.global_position.y:
 		#	body.position.y = $Area2DNG/CollisionShapeG3.global_position.y - 600
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Ground":
+		touchGround = true

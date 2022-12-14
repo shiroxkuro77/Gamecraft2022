@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://LightningCloud.gd"
 }, {
-"base": "Reference",
-"class": "StateFactory",
-"language": "GDScript",
-"path": "res://StateManager.gd"
-}, {
 "base": "Cloud",
 "class": "TreeCloud",
 "language": "GDScript",
@@ -32,7 +27,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Cloud": "",
 "LightningCloud": "",
-"StateFactory": "",
 "TreeCloud": ""
 }
 
