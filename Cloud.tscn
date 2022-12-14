@@ -11,5 +11,6 @@ script = ExtResource( 2 )
 
 [node name="TreeCloud" parent="." instance=ExtResource( 3 )]
 
+[connection signal="lightning" from="LightningCloud" to="." method="_on_LightningCloud_lightning"]
 [connection signal="switch" from="LightningCloud" to="." method="_on_LightningCloud_switch"]
 [connection signal="switch" from="TreeCloud" to="." method="_on_TreeCloud_switch"]

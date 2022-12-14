@@ -19,7 +19,7 @@ animations = [ {
 script = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, 27 )
+position = Vector2( 1, 31 )
 rotation = -0.00423492
 scale = Vector2( 0.25, 0.25 )
 z_index = -1

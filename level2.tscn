@@ -165,7 +165,7 @@ tile_data = PoolIntArray( -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0
 position = Vector2( 150, 387 )
 
 [node name="GoalFlag" parent="." instance=ExtResource( 2 )]
-position = Vector2( 302, 440 )
+position = Vector2( 319, 440 )
 
 [node name="Car" parent="." instance=ExtResource( 4 )]
 position = Vector2( 151, 439 )
@@ -176,3 +176,5 @@ gravity_scale = 0.0
 position = Vector2( 292, 477 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
+
+[connection signal="lightning" from="Cloud" to="." method="_on_Cloud_lightning"]

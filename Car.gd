@@ -28,7 +28,7 @@ func _process(delta):
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
 		elif moving and not front_ray.is_colliding():
-			#AnimatedSprite.play("go_right")
+			#$AnimatedSprite.play("go_right")
 			position.x += unitBlock
 			if position.x >= initial_pos + (moveSteps * unitBlock):
 				stop_moving()
@@ -38,10 +38,9 @@ func _process(delta):
 
 func stop_moving():
 	moving = false
-	$AnimatedSprite.stop()
-
+	#$AnimatedSprite.stop()
 
 func trigger_move_right():
-	print("triggered")
+	#print("triggered")
 	initial_pos = position.x
 	moving = true

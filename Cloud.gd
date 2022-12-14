@@ -24,12 +24,12 @@ func _timer(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):		
 	if Input.is_action_pressed("move_left"):
-		print(position.x)
+		#print(position.x)
 		if position.x > -12:
 			if _timer(delta):
 				position.x -= unitBlock
 	elif Input.is_action_pressed("move_right"):
-		print(position.x, " ", OS.get_screen_size().x)
+		#print(position.x, " ", OS.get_screen_size().x)
 		if position.x < OS.get_screen_size().x - 32:
 			if _timer(delta):
 				position.x += unitBlock

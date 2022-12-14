@@ -27,6 +27,7 @@ func _process(delta):
 		has_lightning = false
 	
 	elif Input.is_action_just_pressed("execute"):
+		
 		$AnimatedSprite.show()
 		$LightningTimer.start()
 		$AnimatedSprite.play()

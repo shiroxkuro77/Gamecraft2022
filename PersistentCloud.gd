@@ -27,10 +27,17 @@ func _switchNode():
 
 
 func _on_LightningCloud_switch():
+	TreeNode.position = LightningNode.position
 	add_child(TreeNode)
 	remove_child(LightningNode)
 
 
 func _on_TreeCloud_switch():
+	LightningNode.position = TreeNode.position
 	add_child(LightningNode)
 	remove_child(TreeNode)
+
+
+func _on_LightningCloud_lightning():
+	emit_signal("lightning")
+	pass # Replace with function body.
