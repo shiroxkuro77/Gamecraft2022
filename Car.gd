@@ -2,6 +2,7 @@ extends RigidBody2D
 
 onready var ground_ray = get_node("GroundRay2D");
 onready var front_ray = get_node("FrontRay2D");
+onready var collide_ray = get_node("CollideRay2D");
 var initial_pos = position.x
 var moving = false
 var unitBlock = 16
@@ -31,6 +32,8 @@ func _process(delta):
 			position.x += unitBlock
 			if position.x >= initial_pos + (moveSteps * unitBlock):
 				stop_moving()
+		elif collide_ray.is_colliding():
+			position.y -= unitBlock
 
 
 func stop_moving():

@@ -17,8 +17,8 @@ func _ready():
 #	pass
 
 
-func _on_Cloud_lightning():
+func _on_LightningCloud_lightning():
 	print("main triggered")
-	print($Cloud.position.x, " ", $Car.position)
-	if abs($Cloud.position.x - $Car.position.x) < unitBlock:
+	print($LightningCloud.position.x, " ", $Car.position)
+	if abs($LightningCloud.position.x - $Car.position.x) < unitBlock:
 		$Car.trigger_move_right()

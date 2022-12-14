@@ -1,25 +1,15 @@
-extends Node2D
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+class_name StateFactory
 
 var states
 
 func _init():
-	#states = {
-	#	"TreeCloud": TreeCloud,
-	#	"LightningCloud": LightningCloud}
-	pass
+	states = {
+		"TreeCloud": TreeCloud,
+		"LightningCloud": LightningCloud
+}
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func get_state(state_name):
+	if states.has(state_name):
+		return states.get(state_name)
+	else:
+		printerr("No state ", state_name, " in state factory!")

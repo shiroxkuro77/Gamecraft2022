@@ -1,8 +1,8 @@
 extends Cloud
 
-class_name LightningCloud
-
 signal lightning
+
+class_name LightningCloud
 
 # Declare member variables here. Examples:
 var has_lightning = false

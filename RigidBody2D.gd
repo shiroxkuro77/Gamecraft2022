@@ -41,17 +41,18 @@ func _process(delta):
 			var savePosition = self.position
 			if $SpriteG1.visible  == true:
 				$SpriteG2.visible = true
-				$Area2DNG/CollisionShapeG2.disabled = false
+				$CollisionShapeG2.disabled = false
 				$SpriteG1.visible = false
 			elif $SpriteG2.visible == true:
 				$SpriteG3.visible = true
-				$Area2DNG/CollisionShapeG3.disabled = false
+				$CollisionShapeG3.disabled = false
 				$SpriteG2.visible = false
 			else:
 				$SpriteG1.visible = true
-				$Area2DNG/CollisionShapeG1.disabled = false
+				$CollisionShapeG1.disabled = false
+				$CollisionShapeNG.disabled = true
 				$SpriteSeed.visible = false
-				self.collision_mask = 1
+				self.collision_layer = 1
 
 
 

@@ -21,15 +21,14 @@ func _timer(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if has_drop_seed and _timer(delta):
-	
+	if has_drop_seed and $TreeTimer.is_stopped():
 		has_drop_seed = false
-	
-	elif Input.is_action_just_pressed("execute"):
+	elif (not has_drop_seed) and Input.is_action_just_pressed("execute"):
 		shoot()
+		$TreeTimer.start()
 		has_drop_seed = true
 		
 func shoot():
 	var bullet = bulletPath.instance()
-	get_parent().get_parent().get_parent().add_child(bullet)
+	get_parent().add_child(bullet)
 	bullet.position = self.global_position

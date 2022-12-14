@@ -7,6 +7,10 @@ var unitBlock = 16
 var time = 0
 const TIME_PERIOD = 0.1
 
+var change_state
+var animated_sprite
+var persistent_state
+
 func _timer(delta):
 	time += delta
 	if time > TIME_PERIOD:
@@ -26,3 +30,9 @@ func _process(delta):
 		if position.x < OS.get_screen_size().x - 32:
 			if _timer(delta):
 				position.x += unitBlock
+
+
+func setup(change_state, animated_sprite, persistent_state):
+	self.change_state = change_state
+	self.animated_sprite = animated_sprite
+	self.persistent_state = persistent_state

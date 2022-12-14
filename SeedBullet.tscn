@@ -12,7 +12,7 @@ extents = Vector2( 12, 12 )
 [node name="Seed" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_mask = 2
+collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="CollisionShapeNG" type="CollisionShape2D" parent="RigidBody2D"]
@@ -20,25 +20,21 @@ position = Vector2( 0, -3 )
 scale = Vector2( 0.25, 0.25 )
 shape = SubResource( 1 )
 
-[node name="Area2DNG" type="Area2D" parent="RigidBody2D"]
-position = Vector2( 0, -3 )
-scale = Vector2( 0.25, 0.25 )
-
-[node name="CollisionShapeG3" type="CollisionShape2D" parent="RigidBody2D/Area2DNG"]
-position = Vector2( 0, -100 )
-scale = Vector2( 2, 2 )
+[node name="CollisionShapeG3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, -28 )
+scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="CollisionShapeG2" type="CollisionShape2D" parent="RigidBody2D/Area2DNG"]
-position = Vector2( 0, -52 )
-scale = Vector2( 2, 2 )
+[node name="CollisionShapeG2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="CollisionShapeG1" type="CollisionShape2D" parent="RigidBody2D/Area2DNG"]
+[node name="CollisionShapeG1" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2( 0, -4 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -64,5 +60,3 @@ visible = false
 position = Vector2( 0, -16 )
 z_index = -1
 texture = ExtResource( 5 )
-
-[connection signal="body_entered" from="RigidBody2D/Area2DNG" to="RigidBody2D" method="_on_Area2DNG_body_entered"]
