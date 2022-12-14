@@ -2,7 +2,7 @@ extends Cloud
 
 class_name TreeCloud
 
-const bulletPath = preload("res://SeedBullet.tscn")
+const bulletPath = preload("res://scene/SeedBullet.tscn")
 
 # Declare member variables here. Examples:
 var has_drop_seed = false

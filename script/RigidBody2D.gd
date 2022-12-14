@@ -1,16 +1,10 @@
 extends RigidBody2D
 
-onready var nextState = get_node("RigidBody2DGrow1")
-onready var childState = get_node("RigidBody2D/SpriteSeed")
 var currPos
 var isMoving = true
 var time = 0
 var TIME_PERIOD = 0.1
 var touchGround = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 	
 func _timer(delta):
 	time += delta
@@ -50,14 +44,6 @@ func _process(delta):
 				$CollisionShapeNG.disabled = true
 				$SpriteSeed.visible = false
 				self.collision_layer = 1
-
-
-
-func _on_Area2DNG_body_entered(body):
-	if body.name == "Car":
-		
-		pass#if body.position.y > $Area2DNG/CollisionShapeG3.global_position.y:
-		#	body.position.y = $Area2DNG/CollisionShapeG3.global_position.y - 600
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Ground":

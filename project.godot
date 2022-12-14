@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Cloud",
 "language": "GDScript",
-"path": "res://Cloud.gd"
+"path": "res://script/Cloud.gd"
 }, {
 "base": "Cloud",
 "class": "LightningCloud",
 "language": "GDScript",
-"path": "res://LightningCloud.gd"
+"path": "res://script/LightningCloud.gd"
 }, {
 "base": "Cloud",
 "class": "TreeCloud",
 "language": "GDScript",
-"path": "res://TreeCloud.gd"
+"path": "res://script/TreeCloud.gd"
 } ]
 _global_script_class_icons={
 "Cloud": "",
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamecraft 2022"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scene/Main.tscn"
 config/icon="res://icon.png"
 
 [display]

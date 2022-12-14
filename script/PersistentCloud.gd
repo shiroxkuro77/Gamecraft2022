@@ -11,10 +11,7 @@ func _ready():
 	for child in get_children():
 		if not child == LightningNode:
 			remove_child(child)
-	#add_child(TreeNode)
-	#add_child($LightningCloud)
-	#remove_child($LightningCloud)
-
+			
 func _switchNode():
 	if currNode == LightningNode:
 		add_child(TreeNode)
@@ -40,4 +37,3 @@ func _on_TreeCloud_switch():
 
 func _on_LightningCloud_lightning():
 	emit_signal("lightning")
-	pass # Replace with function body.
