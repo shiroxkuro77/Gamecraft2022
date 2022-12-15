@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scene/LightningCloud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scene/Cloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scene/GoalFlag.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/Main.gd" type="Script" id=4]
@@ -168,5 +168,5 @@ zoom = Vector2( 0.5, 0.5 )
 [node name="Seed" parent="." instance=ExtResource( 7 )]
 position = Vector2( 329, 448 )
 
-[node name="LightningCloud" parent="." instance=ExtResource( 1 )]
-position = Vector2( 312, 391 )
+[node name="Cloud" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198, 389 )

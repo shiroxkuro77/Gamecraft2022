@@ -1,10 +1,11 @@
 extends Node2D
 
 class_name Cloud
-signal switch
+signal switchToLightning
+signal switchToTree
+signal switchToTornado
 
 # Declare member variables here. Examples:
-
 var unitBlock = 16
 var time = 0
 const TIME_PERIOD = 0.1
@@ -30,5 +31,10 @@ func _process(delta):
 		if position.x < OS.get_screen_size().x - 32:
 			if _timer(delta):
 				position.x += unitBlock
-	elif Input.is_action_just_released("ui_up"):
-		emit_signal("switch")
+	elif Input.is_action_just_released("z"):
+		emit_signal("switchToTree")
+	elif Input.is_action_just_released("x"):
+		emit_signal("switchToTornado")
+	elif Input.is_action_just_released("c"):
+		emit_signal("switchToLightning")
+

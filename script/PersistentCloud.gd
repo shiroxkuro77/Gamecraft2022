@@ -1,39 +1,58 @@
 extends Node2D
 
-signal lightning
-
 onready var TreeNode = $TreeCloud
 onready var LightningNode = $LightningCloud
+onready var TornadoNode = $TornadoCloud
 onready var currNode
 
 func _ready():
-	currNode = LightningNode
+	currNode = TreeNode
 	for child in get_children():
-		if not child == LightningNode:
+		if not child == TreeNode:
 			remove_child(child)
 			
-func _switchNode():
-	if currNode == LightningNode:
-		add_child(TreeNode)
-		remove_child(currNode)
-		currNode = TreeNode
-	elif currNode == TreeNode:
-		add_child(LightningNode)
-		remove_child(currNode)
-		currNode = LightningNode
+func _on_LightningCloud_switchToLightning():
+	pass
+
+func _on_LightningCloud_switchToTornado():
+	TornadoNode.position = LightningNode.position
+	add_child(TornadoNode)
+	remove_child(LightningNode)
 
 
-func _on_LightningCloud_switch():
+func _on_LightningCloud_switchToTree():
 	TreeNode.position = LightningNode.position
 	add_child(TreeNode)
 	remove_child(LightningNode)
 
 
-func _on_TreeCloud_switch():
+func _on_TreeCloud_switchToLightning():
 	LightningNode.position = TreeNode.position
 	add_child(LightningNode)
 	remove_child(TreeNode)
 
 
-func _on_LightningCloud_lightning():
-	emit_signal("lightning")
+func _on_TreeCloud_switchToTornado():
+	TornadoNode.position = TreeNode.position
+	add_child(TornadoNode)
+	remove_child(TreeNode)
+
+
+func _on_TreeCloud_switchToTree():
+	pass
+
+
+func _on_TornadoCloud_switchToLightning():
+	LightningNode.position = TornadoNode.position
+	add_child(LightningNode)
+	remove_child(TornadoNode)
+
+
+func _on_TornadoCloud_switchToTornado():
+	pass
+
+
+func _on_TornadoCloud_switchToTree():
+	TreeNode.position = TornadoNode.position
+	add_child(TreeNode)
+	remove_child(TornadoNode)
