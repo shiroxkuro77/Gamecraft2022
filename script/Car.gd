@@ -8,7 +8,7 @@ var moving = false
 var unitBlock = 16
 var time = 0
 var moveSteps = 5
-const TIME_PERIOD = 0.1
+const TIME_PERIOD = 0.3
 # Declare member variables here. Examples:
 
 # Called when the node enters the scene tree for the first time.
@@ -28,19 +28,18 @@ func _process(delta):
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
 		elif moving and not front_ray.is_colliding():
-			#$AnimatedSprite.play("go_right")
+			$AnimatedSprite.play("go_right")
 			position.x += unitBlock
-			if position.x >= initial_pos + (moveSteps * unitBlock):
-				stop_moving()
+			#if position.x >= initial_pos + (moveSteps * unitBlock):
+				#stop_moving()
 		elif collide_ray.is_colliding():
 			position.y -= unitBlock
 
 
 func stop_moving():
 	moving = false
-	#$AnimatedSprite.stop()
+	$AnimatedSprite.stop()
 
 func trigger_move_right():
-	#print("triggered")
 	initial_pos = position.x
 	moving = true
