@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/car new/car(64x64).png" type="Texture" id=1]
+[ext_resource path="res://assets/car/car(64x64).png" type="Texture" id=1]
 [ext_resource path="res://script/Car.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
