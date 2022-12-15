@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://script/LightningCloud.gd"
 }, {
 "base": "Cloud",
+"class": "TornadoCloud",
+"language": "GDScript",
+"path": "res://script/TornadoCloud.gd"
+}, {
+"base": "Cloud",
 "class": "TreeCloud",
 "language": "GDScript",
 "path": "res://script/TreeCloud.gd"
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Cloud": "",
 "LightningCloud": "",
+"TornadoCloud": "",
 "TreeCloud": ""
 }
 

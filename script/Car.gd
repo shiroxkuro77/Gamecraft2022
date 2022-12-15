@@ -9,11 +9,11 @@ var unitBlock = 16
 var time = 0
 var moveSteps = 5
 const TIME_PERIOD = 0.3
-# Declare member variables here. Examples:
+var Direction = "Right"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	moving = true
 	
 func _timer(delta):
 	time += delta
@@ -25,13 +25,16 @@ func _timer(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if _timer(delta):
+		if front_ray.is_colliding():
+			if front_ray.get_collider().name == "TornadoBody":
+				ChangeDirection()
+				front_ray.get_collider().get_parent().queue_free()
+				#$TornadoTimer.start()
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
-		elif moving and not front_ray.is_colliding():
+		elif moving and (not front_ray.is_colliding()):
 			$AnimatedSprite.play("go_right")
-			position.x += unitBlock
-			#if position.x >= initial_pos + (moveSteps * unitBlock):
-				#stop_moving()
+			MoveDirection()
 		elif collide_ray.is_colliding():
 			position.y -= unitBlock
 
@@ -43,3 +46,21 @@ func stop_moving():
 func trigger_move_right():
 	initial_pos = position.x
 	moving = true
+	
+
+func ChangeDirection():
+	if Direction == "Left":
+		$AnimatedSprite.set_flip_h( false )
+		$FrontRay2D.set_cast_to(Vector2(64,0))
+		Direction = "Right"
+	elif Direction == "Right":
+		$AnimatedSprite.set_flip_h( true )
+		$FrontRay2D.set_cast_to(Vector2(-64,0))
+		Direction = "Left"
+		
+func MoveDirection():
+	if Direction == "Left":
+		position.x -= unitBlock
+	elif Direction == "Right":
+		position.x += unitBlock
+
