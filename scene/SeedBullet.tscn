@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/tree new/seed(64x64).png" type="Texture" id=1]
 [ext_resource path="res://assets/tree new/tree-0(64x128).png" type="Texture" id=2]
 [ext_resource path="res://assets/tree new/tree-1(64x128).png" type="Texture" id=3]
-[ext_resource path="res://assets/tree new/tree-2(64x128).png" type="Texture" id=4]
+[ext_resource path="res://assets/tree new/tree(64x128).png" type="Texture" id=4]
 [ext_resource path="res://script/RigidBody2D.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,7 +13,7 @@ extents = Vector2( 12, 10.5 )
 
 [node name="SeedBody" type="RigidBody2D" parent="."]
 collision_layer = 0
-gravity_scale = 3.0
+gravity_scale = 20.0
 script = ExtResource( 5 )
 
 [node name="CollisionShapeNG" type="CollisionShape2D" parent="SeedBody"]

@@ -4,7 +4,7 @@
 [ext_resource path="res://script/Car.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33, 33 )
+extents = Vector2( 32, 32 )
 
 [node name="Car" type="RigidBody2D"]
 collision_mask = 0
@@ -16,7 +16,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.25, -1 )
 shape = SubResource( 1 )
 disabled = true
 
@@ -33,5 +32,4 @@ cast_to = Vector2( 64, 0 )
 
 [node name="CarSprite" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 0, -15 )
 texture = ExtResource( 1 )

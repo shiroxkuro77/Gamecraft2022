@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamecraft 2022"
-run/main_scene="res://other_scenes/game_start.tscn"
+run/main_scene="res://scene/game_start.tscn"
 config/icon="res://icon.png"
 
 [display]

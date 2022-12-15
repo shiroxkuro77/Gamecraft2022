@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://other_scenes/game_start.gd" type="Script" id=1]
-[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://script/game_start.gd" type="Script" id=2]
 
 [node name="Control2" type="Control"]
 anchor_right = 1.0
@@ -12,8 +12,8 @@ margin_left = 237.0
 margin_top = 215.0
 margin_right = 469.0
 margin_bottom = 261.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Start Game!"
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [connection signal="pressed" from="Button" to="Button" method="_on_start_game_button_pressed"]

@@ -12,7 +12,8 @@ var Direction = "Right"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	moving = true
+	moving = false
+
 	
 func _timer(delta):
 	time += delta
@@ -38,6 +39,9 @@ func _process(delta):
 			print(collide_ray.get_collider())
 			position.y -= unitBlock
 
+
+func start_moving():
+	moving = true
 
 func stop_moving():
 	moving = false

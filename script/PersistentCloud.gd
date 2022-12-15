@@ -11,6 +11,16 @@ func _ready():
 		if not child == TreeNode:
 			remove_child(child)
 			
+
+func set_ready():
+	if TreeNode:
+		TreeNode.set_ready()
+	if LightningNode:
+		LightningNode.set_ready()
+	if TornadoNode:
+		TornadoNode.set_ready()
+	
+
 func _on_LightningCloud_switchToLightning():
 	pass
 

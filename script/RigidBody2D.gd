@@ -28,15 +28,16 @@ func _process(delta):
 		if not isMoving:
 			if not touchGround:
 				get_parent().queue_free()
+				
 			if $SpriteG1.visible  == true:
 				$SpriteG2.visible = true
 				$CollisionShapeG2.disabled = false
 				$SpriteG1.visible = false
-			elif $SpriteG2.visible == true:
+			if $SpriteG2.visible == true:
 				$SpriteG3.visible = true
 				$CollisionShapeG3.disabled = false
 				$SpriteG2.visible = false
-			elif $SpriteSeed.visible == true:
+			if $SpriteSeed.visible == true:
 				$SpriteG1.visible = true
 				$CollisionShapeG1.disabled = false
 				$CollisionShapeNG.disabled = true

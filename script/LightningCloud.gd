@@ -10,15 +10,12 @@ func _ready():
 	$AnimatedSprite.hide()
 	pass # Replace with function body.
 
-func _timer(delta):
-	time += delta
-	if time > TIME_PERIOD:
-		time = 0
-		return true
-	return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if is_ready == false:
+		return
+		
 	if has_lightning and $LightningTimer.is_stopped():
 		$AnimatedSprite.stop()
 		$AnimatedSprite.hide()

@@ -283,3 +283,5 @@ margin_right = 610.0
 margin_bottom = 586.0
 custom_fonts/font = SubResource( 6 )
 text = "Proceed to level"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
