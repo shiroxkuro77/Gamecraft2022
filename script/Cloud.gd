@@ -6,7 +6,7 @@ signal switchToTree
 signal switchToTornado
 
 # Declare member variables here. Examples:
-var unitBlock = 16
+var unitBlock = 64
 var time = 0
 const TIME_PERIOD = 0.1
 

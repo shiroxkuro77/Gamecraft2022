@@ -36,7 +36,7 @@ func _process(delta):
 				$SpriteG3.visible = true
 				$CollisionShapeG3.disabled = false
 				$SpriteG2.visible = false
-			else:
+			elif $SpriteSeed.visible == true:
 				$SpriteG1.visible = true
 				$CollisionShapeG1.disabled = false
 				$CollisionShapeNG.disabled = true

@@ -170,11 +170,8 @@ position = Vector2( 447, 440 )
 [node name="Car" parent="." instance=ExtResource( 4 )]
 position = Vector2( 151, 439 )
 mode = 0
-gravity_scale = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 292, 477 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
-
-[connection signal="lightning" from="Cloud" to="." method="_on_Cloud_lightning"]
