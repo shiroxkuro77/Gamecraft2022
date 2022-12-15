@@ -5,9 +5,8 @@ onready var front_ray = get_node("FrontRay2D");
 onready var collide_ray = get_node("CollideRay2D");
 var initial_pos = position.x
 var moving = false
-var unitBlock = 16
+var unitBlock = 64
 var time = 0
-var moveSteps = 5
 const TIME_PERIOD = 0.3
 var Direction = "Right"
 
@@ -24,6 +23,7 @@ func _timer(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	if _timer(delta):
 		if front_ray.is_colliding():
 			#Deletes tornado
@@ -33,15 +33,14 @@ func _process(delta):
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
 		elif moving and (not front_ray.is_colliding()):
-			$AnimatedSprite.play("go_right")
 			MoveDirection()
 		elif collide_ray.is_colliding():
+			print(collide_ray.get_collider())
 			position.y -= unitBlock
 
 
 func stop_moving():
 	moving = false
-	$AnimatedSprite.stop()
 
 func trigger_move_right():
 	initial_pos = position.x
@@ -50,11 +49,11 @@ func trigger_move_right():
 
 func ChangeDirection():
 	if Direction == "Left":
-		$AnimatedSprite.set_flip_h( false )
+		$CarSprite.set_flip_h( false )
 		$FrontRay2D.set_cast_to(Vector2(64,0))
 		Direction = "Right"
 	elif Direction == "Right":
-		$AnimatedSprite.set_flip_h( true )
+		$CarSprite.set_flip_h( true )
 		$FrontRay2D.set_cast_to(Vector2(-64,0))
 		Direction = "Left"
 		
