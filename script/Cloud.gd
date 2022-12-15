@@ -1,7 +1,6 @@
 extends Node2D
 
 class_name Cloud
-signal lightning
 signal switch
 
 # Declare member variables here. Examples:

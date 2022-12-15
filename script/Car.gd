@@ -26,10 +26,10 @@ func _timer(delta):
 func _process(delta):
 	if _timer(delta):
 		if front_ray.is_colliding():
+			#Deletes tornado
 			if front_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				front_ray.get_collider().get_parent().queue_free()
-				#$TornadoTimer.start()
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
 		elif moving and (not front_ray.is_colliding()):
