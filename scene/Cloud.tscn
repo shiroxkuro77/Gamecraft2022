@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scene/LightningCloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/PersistentCloud.gd" type="Script" id=2]
 [ext_resource path="res://scene/TreeCloud.tscn" type="PackedScene" id=3]
-
+[ext_resource path="res://scene/TornadoCloud.tscn" type="PackedScene" id=4]
 
 [node name="Cloud" type="Node2D"]
 script = ExtResource( 2 )
@@ -12,6 +12,14 @@ script = ExtResource( 2 )
 
 [node name="TreeCloud" parent="." instance=ExtResource( 3 )]
 
-[connection signal="lightning" from="LightningCloud" to="." method="_on_LightningCloud_lightning"]
-[connection signal="switch" from="LightningCloud" to="." method="_on_LightningCloud_switch"]
-[connection signal="switch" from="TreeCloud" to="." method="_on_TreeCloud_switch"]
+[node name="TornadoCloud" parent="." instance=ExtResource( 4 )]
+
+[connection signal="switchToLightning" from="LightningCloud" to="." method="_on_LightningCloud_switchToLightning"]
+[connection signal="switchToTornado" from="LightningCloud" to="." method="_on_LightningCloud_switchToTornado"]
+[connection signal="switchToTree" from="LightningCloud" to="." method="_on_LightningCloud_switchToTree"]
+[connection signal="switchToLightning" from="TreeCloud" to="." method="_on_TreeCloud_switchToLightning"]
+[connection signal="switchToTornado" from="TreeCloud" to="." method="_on_TreeCloud_switchToTornado"]
+[connection signal="switchToTree" from="TreeCloud" to="." method="_on_TreeCloud_switchToTree"]
+[connection signal="switchToLightning" from="TornadoCloud" to="." method="_on_TornadoCloud_switchToLightning"]
+[connection signal="switchToTornado" from="TornadoCloud" to="." method="_on_TornadoCloud_switchToTornado"]
+[connection signal="switchToTree" from="TornadoCloud" to="." method="_on_TornadoCloud_switchToTree"]

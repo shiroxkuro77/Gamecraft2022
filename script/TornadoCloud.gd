@@ -1,8 +1,8 @@
 extends Cloud
 
-class_name TreeCloud
+class_name TornadoCloud
 
-const bulletPath = preload("res://scene/SeedBullet.tscn")
+const bulletPath = preload("res://scene/Tornado.tscn")
 
 # Declare member variables here. Examples:
 var has_drop_seed = false
@@ -17,12 +17,12 @@ func _ready():
 func _process(delta):
 	if is_ready == false:
 		return
-	
-	if has_drop_seed and $TreeTimer.is_stopped():
+		
+	if has_drop_seed and $Timer.is_stopped():
 		has_drop_seed = false
 	elif (not has_drop_seed) and Input.is_action_just_pressed("execute"):
 		shoot()
-		$TreeTimer.start()
+		$Timer.start()
 		has_drop_seed = true
 		
 func shoot():

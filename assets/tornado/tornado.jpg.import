@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/tornado.jpg-7252fdb551e3a5ea1a2e31e036f8152c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/car/car-3.png"
+source_file="res://assets/tornado/tornado.jpg"
+dest_files=[ "res://.import/tornado.jpg-7252fdb551e3a5ea1a2e31e036f8152c.stex" ]
+
 [params]
 
 compress/mode=0

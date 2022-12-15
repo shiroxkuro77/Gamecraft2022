@@ -5,15 +5,15 @@ onready var front_ray = get_node("FrontRay2D");
 onready var collide_ray = get_node("CollideRay2D");
 var initial_pos = position.x
 var moving = false
-var unitBlock = 16
+var unitBlock = 64
 var time = 0
-var moveSteps = 5
 const TIME_PERIOD = 0.3
-# Declare member variables here. Examples:
+var Direction = "Right"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	moving = false
+
 	
 func _timer(delta):
 	time += delta
@@ -24,22 +24,46 @@ func _timer(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	if _timer(delta):
+		if front_ray.is_colliding():
+			#Deletes tornado
+			if front_ray.get_collider().name == "TornadoBody":
+				ChangeDirection()
+				front_ray.get_collider().get_parent().queue_free()
 		if not ground_ray.is_colliding():
 			position.y += unitBlock
-		elif moving and not front_ray.is_colliding():
-			$AnimatedSprite.play("go_right")
-			position.x += unitBlock
-			#if position.x >= initial_pos + (moveSteps * unitBlock):
-				#stop_moving()
+		elif moving and (not front_ray.is_colliding()):
+			MoveDirection()
 		elif collide_ray.is_colliding():
+			print(collide_ray.get_collider())
 			position.y -= unitBlock
 
 
+func start_moving():
+	moving = true
+
 func stop_moving():
 	moving = false
-	$AnimatedSprite.stop()
 
 func trigger_move_right():
 	initial_pos = position.x
 	moving = true
+	
+
+func ChangeDirection():
+	if Direction == "Left":
+		$CarSprite.set_flip_h( false )
+		$FrontRay2D.set_cast_to(Vector2(64,0))
+		Direction = "Right"
+	elif Direction == "Right":
+		$CarSprite.set_flip_h( true )
+		$FrontRay2D.set_cast_to(Vector2(-64,0))
+		Direction = "Left"
+		
+func MoveDirection():
+	if Direction == "Left":
+		position.x -= unitBlock
+	elif Direction == "Right":
+		position.x += unitBlock
+

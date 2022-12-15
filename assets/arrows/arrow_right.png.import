@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/arrow_right.png-de2b9cfe24d4c87dcc63d880e103e3f9.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/car/car-3.png"
+source_file="res://assets/arrows/arrow_right.png"
+dest_files=[ "res://.import/arrow_right.png-de2b9cfe24d4c87dcc63d880e103e3f9.stex" ]
+
 [params]
 
 compress/mode=0

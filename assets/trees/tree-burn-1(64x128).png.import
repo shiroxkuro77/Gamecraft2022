@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/tree-burn-1(64x128).png-1fd8a95e0da3ea75cceee019efa3b16d.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/car/car-3.png"
+source_file="res://assets/trees/tree-burn-1(64x128).png"
+dest_files=[ "res://.import/tree-burn-1(64x128).png-1fd8a95e0da3ea75cceee019efa3b16d.stex" ]
+
 [params]
 
 compress/mode=0
