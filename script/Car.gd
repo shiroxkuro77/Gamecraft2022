@@ -30,7 +30,7 @@ func _timer(delta):
 func _process(delta):
 	isOnPlatform = false
 	
-	if ground_ray.is_colliding():
+	if ground_ray.is_colliding() and ground_ray.get_collider():
 		if ground_ray.get_collider().name in "Platform":
 			if not get_parent().name in "Platform":
 				#change parent to platform
@@ -42,7 +42,7 @@ func _process(delta):
 				global_position.x = preposx
 				global_position.y = preposy
 			isOnPlatform = true
-	if collide_ray.is_colliding():
+	if collide_ray.is_colliding() and collide_ray.get_collider():
 		if collide_ray.get_collider().name in "Platform":
 			if not get_parent().name in "Platform":
 				position.y -= unitBlock
