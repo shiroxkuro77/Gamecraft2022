@@ -23,7 +23,6 @@ func _on_ResetButton_pressed():
 	get_tree().reload_current_scene()
 
 func _on_Car_reachedGoal():
-	print("Yes")
 	if name == "Level1":
 		get_tree().change_scene("res://scene/instructions_level_2.tscn")
 	if name == "Level2":
@@ -31,4 +30,6 @@ func _on_Car_reachedGoal():
 	if name == "Level3":
 		get_tree().change_scene("res://scene/Level4.tscn")	
 	if name == "Level4":
+		get_tree().change_scene("res://scene/Level5.tscn")	
+	if name == "Level5":
 		get_tree().change_scene("res://scene/End.tscn")

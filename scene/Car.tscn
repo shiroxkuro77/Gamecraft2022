@@ -27,6 +27,7 @@ cast_to = Vector2( 0, -28 )
 
 [node name="GroundRay2D" type="RayCast2D" parent="."]
 enabled = true
+cast_to = Vector2( 0, 80 )
 
 [node name="FrontRay2D" type="RayCast2D" parent="."]
 enabled = true

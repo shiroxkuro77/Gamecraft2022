@@ -348,7 +348,6 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 544, 360 )
-current = true
 zoom = Vector2( 1.5, 1.5 )
 
 [node name="Car" parent="." instance=ExtResource( 6 )]
@@ -398,5 +397,6 @@ text = "Level 2: Sheltered"
 position = Vector2( 549, 373 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
+
 [connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

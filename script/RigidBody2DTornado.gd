@@ -34,7 +34,7 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if body.name == "Ground":
 		touchGround = true
-	if body.name == "Platform":
+	elif not body.name == "TornadoBody":
 		#grow()
 		get_parent().queue_free()
 
