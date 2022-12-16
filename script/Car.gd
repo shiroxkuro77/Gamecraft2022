@@ -9,10 +9,14 @@ var unitBlock = 64
 var time = 0
 const TIME_PERIOD = 0.3
 var Direction = "Right"
+var isOnPlatform = false
+var oldParent
+signal reachedGoal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	moving = false
+	oldParent = get_parent()
 
 	
 func _timer(delta):
@@ -24,6 +28,42 @@ func _timer(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	isOnPlatform = false
+	
+	if ground_ray.is_colliding():
+		if ground_ray.get_collider().name in "Platform":
+			if not get_parent().name in "Platform":
+				#change parent to platform
+				var preposx = global_position.x
+				var preposy = global_position.y
+				var new_parent = ground_ray.get_collider()
+				get_parent().remove_child(self)
+				new_parent.add_child(self)
+				global_position.x = preposx
+				global_position.y = preposy
+			isOnPlatform = true
+	if collide_ray.is_colliding():
+		if collide_ray.get_collider().name in "Platform":
+			if not get_parent().name in "Platform":
+				position.y -= unitBlock
+				#change parent to platform
+				var preposx = global_position.x
+				var preposy = global_position.y
+				var new_parent = collide_ray.get_collider()
+				get_parent().remove_child(self)
+				new_parent.add_child(self)
+				global_position.x = preposx
+				global_position.y = preposy
+			isOnPlatform = true
+	if not isOnPlatform:
+		#swap back parent
+		var preposx = global_position.x
+		var preposy = global_position.y
+		var new_parent = oldParent
+		get_parent().remove_child(self)
+		new_parent.add_child(self)
+		global_position.x = preposx
+		global_position.y = preposy
 
 	if _timer(delta):
 		if front_ray.is_colliding():
@@ -31,15 +71,17 @@ func _process(delta):
 			if front_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				front_ray.get_collider().get_parent().queue_free()
-		if not ground_ray.is_colliding():
+			if front_ray.get_collider().name == "GoalFlag":
+				emit_signal("reachedGoal")	
+		if not ground_ray.is_colliding() and not get_parent().name in "Platform":
 			position.y += unitBlock
 		elif moving and (not front_ray.is_colliding()):
 			MoveDirection()
 		elif collide_ray.is_colliding():
 			#print(collide_ray.get_collider())
-			if not collide_ray.get_collider().name in "Platform":
-				position.y -= unitBlock
-
+			#if not get_parent().name in "Platform":
+			position.y -= unitBlock
+		
 
 func start_moving():
 	moving = true

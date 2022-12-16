@@ -572,4 +572,5 @@ margin_bottom = 96.0
 custom_fonts/font = SubResource( 33 )
 text = "Level 3: Forest"
 
+[connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

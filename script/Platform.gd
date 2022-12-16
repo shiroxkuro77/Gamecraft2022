@@ -26,7 +26,6 @@ func _process(delta):
 			initial_ypos = position.y
 		else:
 			MoveDirection()
-		
 
 func ChangeDirection():
 	if yDirection == "up":
@@ -41,4 +40,5 @@ func MoveDirection():
 	elif yDirection == "down":
 		position.y += unitBlock
 
-
+func _on_Area2D_body_entered(body):
+	print(body)

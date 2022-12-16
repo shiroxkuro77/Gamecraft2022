@@ -479,4 +479,5 @@ margin_bottom = 96.0
 custom_fonts/font = SubResource( 30 )
 text = "Level 1: Bumpy Road"
 
+[connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

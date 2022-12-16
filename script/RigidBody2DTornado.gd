@@ -36,7 +36,7 @@ func _on_Area2D_body_entered(body):
 		touchGround = true
 	if body.name == "Platform":
 		grow()
-		
+
 func grow():
 	$SpriteG1.visible = true
 	$CollisionShapeG1.disabled = false
