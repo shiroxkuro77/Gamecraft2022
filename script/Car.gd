@@ -120,3 +120,5 @@ func MoveDirection():
 	elif Direction == "Right":
 		position.x += unitBlock
 
+func play_win_sound():
+	$WinSound.play()
