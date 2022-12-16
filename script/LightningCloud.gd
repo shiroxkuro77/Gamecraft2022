@@ -28,13 +28,14 @@ func _process(_delta):
 			if "Tree" in lightning_ray.get_collider().name:
 				#Destroy tree
 				lightning_ray.get_collider().burn()
-#				
+				
 	elif Input.is_action_just_pressed("execute"):
 		if lightning_ray.is_colliding():
 			changeSpriteSize(lightning_ray, lightning_ray.get_collision_point())
 		$AnimatedSprite.show()
 		$LightningTimer.start()
 		$AnimatedSprite.play()
+		$ThunderSound.play()
 		has_lightning = true
 	
 func changeSpriteSize(ray, collisionPoint):

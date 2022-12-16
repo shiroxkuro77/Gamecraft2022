@@ -29,3 +29,4 @@ func shoot():
 	var bullet = bulletPath.instance()
 	get_parent().get_parent().add_child(bullet)
 	bullet.position = self.global_position
+	$SeedImpactSound.play()
