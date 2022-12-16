@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://script/TreeCloud.gd" type="Script" id=1]
 [ext_resource path="res://assets/clouds/cloud-green-v2(128x64).png" type="Texture" id=2]
+[ext_resource path="res://audio/mixkit-heavy-fall-into-mud-753.wav" type="AudioStream" id=3]
 
 [node name="TreeCloud" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,3 +13,6 @@ texture = ExtResource( 2 )
 [node name="TreeTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="SeedImpactSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

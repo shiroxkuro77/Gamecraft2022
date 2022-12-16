@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_ready == false:
 		return
 		
@@ -23,11 +23,25 @@ func _process(delta):
 		if lightning_ray.is_colliding():
 			#Deletes seed/tree
 			if lightning_ray.get_collider().name == "SeedBody":
-				lightning_ray.get_collider().get_parent().queue_free()
-	
+				#Play tree animation
+				lightning_ray.get_collider().burn_and_kill_self();
+			if "Tree" in lightning_ray.get_collider().name:
+				#Destroy tree
+				lightning_ray.get_collider().burn()
+				
 	elif Input.is_action_just_pressed("execute"):
+		if lightning_ray.is_colliding():
+			changeSpriteSize(lightning_ray, lightning_ray.get_collision_point())
 		$AnimatedSprite.show()
 		$LightningTimer.start()
 		$AnimatedSprite.play()
+		$ThunderSound.play()
 		has_lightning = true
-		
+	
+func changeSpriteSize(ray, collisionPoint):
+	print(ray.get_global_position())
+	print(collisionPoint)
+	print(ray.get_global_position().distance_to(collisionPoint))
+	$AnimatedSprite.scale.y = ray.get_global_position().distance_to(collisionPoint) / 128
+	$AnimatedSprite.set_global_position(lerp(ray.get_global_position(), collisionPoint, 0.7))
+	#$AnimatedSprite.rotation_degrees = rad2deg(get_angle_to(ray.get_global_position()))

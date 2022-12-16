@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-heavy-fall-into-mud-753.wav-6d0d8101cad4e8015f65b9a52793b6c6.sample"
+
+[deps]
+
+source_file="res://audio/mixkit-heavy-fall-into-mud-753.wav"
+dest_files=[ "res://.import/mixkit-heavy-fall-into-mud-753.wav-6d0d8101cad4e8015f65b9a52793b6c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

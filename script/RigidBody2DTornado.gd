@@ -29,12 +29,19 @@ func _process(delta):
 			if not touchGround:
 				get_parent().queue_free()
 			else:
-				$SpriteG1.visible = true
-				$CollisionShapeG1.disabled = false
-				$CollisionShapeNG.disabled = true
-				$SpriteSeed.visible = false
-				self.collision_layer = 1
-
+				grow()
+				
 func _on_Area2D_body_entered(body):
 	if body.name == "Ground":
 		touchGround = true
+	elif not body.name == "TornadoBody":
+		#grow()
+		get_parent().queue_free()
+
+func grow():
+	$SpriteG1.visible = true
+	$CollisionShapeG1.disabled = false
+	$CollisionShapeNG.disabled = true
+	$SpriteSeed.visible = false
+	self.collision_layer = 1
+
