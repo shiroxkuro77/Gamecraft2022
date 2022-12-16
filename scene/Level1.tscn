@@ -4,9 +4,9 @@
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=2]
 [ext_resource path="res://scene/GoalFlag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://scene/Cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://script/level_script.gd" type="Script" id=7]
+[ext_resource path="res://scene/CloudNoTL.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -421,7 +421,7 @@ font_data = ExtResource( 4 )
 [node name="Level1" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Cloud" parent="." instance=ExtResource( 5 )]
+[node name="Cloud" parent="." instance=ExtResource( 8 )]
 position = Vector2( 544, 160 )
 
 [node name="Ground" type="TileMap" parent="."]
@@ -502,7 +502,7 @@ text = "Congratulations!
 You have cleared the level!
 
 
-Press [Enter] to continue"
+Press [Space] to continue"
 align = 1
 valign = 1
 

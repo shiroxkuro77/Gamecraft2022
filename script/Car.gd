@@ -67,14 +67,14 @@ func _process(delta):
 		global_position.y = preposy
 	
 	if _timer(delta):
-		if front_ray.is_colliding():
+		if front_ray.is_colliding() and front_ray.get_collider():
 			#Deletes tornado
 			if front_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				front_ray.get_collider().get_parent().queue_free()
 			if front_ray.get_collider().name == "GoalFlag":
 				emit_signal("reachedGoal")	
-		elif ground_ray.is_colliding():
+		elif ground_ray.is_colliding() and ground_ray.get_collider():
 			if ground_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				ground_ray.get_collider().get_parent().queue_free()

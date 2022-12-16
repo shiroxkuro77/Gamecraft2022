@@ -10,7 +10,7 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -26,7 +26,6 @@ z_index = -1
 frames = SubResource( 1 )
 
 [node name="SpriteCloudLightning" type="Sprite" parent="."]
-position = Vector2( 0, 1 )
 texture = ExtResource( 4 )
 
 [node name="LightningTimer" type="Timer" parent="."]
