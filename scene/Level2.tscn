@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/Background_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=2]
-[ext_resource path="res://assets/log/log(32x16).png" type="Texture" id=3]
+[ext_resource path="res://scene/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/GoalFlag.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scene/Cloud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=6]
@@ -315,41 +315,6 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="Animation" id=7]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -1, -18 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "movingplatform"
-length = 12.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 320, 192 ), Vector2( 320, 576 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=22]
-extents = Vector2( 64, 16 )
-
 [sub_resource type="DynamicFont" id=23]
 size = 24
 font_data = ExtResource( 8 )
@@ -386,30 +351,14 @@ position = Vector2( 544, 360 )
 current = true
 zoom = Vector2( 1.5, 1.5 )
 
-[node name="Platform" type="StaticBody2D" parent="."]
-position = Vector2( -1, -18 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-autoplay = "movingplatform"
-anims/RESET = SubResource( 7 )
-anims/movingplatform = SubResource( 8 )
-
-[node name="Sprite" type="Sprite" parent="Platform"]
-scale = Vector2( 4, 4 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2( 0, -16 )
-shape = SubResource( 22 )
-
 [node name="Car" parent="." instance=ExtResource( 6 )]
 position = Vector2( 608, 416 )
 
 [node name="GoalFlag" parent="." instance=ExtResource( 4 )]
 position = Vector2( 544, 544 )
+
+[node name="Platform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 320, 564 )
 
 [node name="ResetButton" type="Button" parent="."]
 margin_left = 960.0

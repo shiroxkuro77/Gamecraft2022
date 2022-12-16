@@ -7,7 +7,7 @@
 [ext_resource path="res://script/RigidBody2D.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 10.5 )
+extents = Vector2( 11.625, 14.25 )
 
 [node name="Seed" type="Node2D"]
 
@@ -21,13 +21,13 @@ position = Vector2( -2, -12 )
 shape = SubResource( 1 )
 
 [node name="CollisionShapeG2" type="CollisionShape2D" parent="SeedBody"]
-position = Vector2( 1, -69 )
+position = Vector2( 0.5, -68 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 disabled = true
 
 [node name="CollisionShapeG3" type="CollisionShape2D" parent="SeedBody"]
-position = Vector2( 1, -114 )
+position = Vector2( 0.75, -107.5 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 disabled = true

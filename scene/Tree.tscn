@@ -6,6 +6,7 @@
 extents = Vector2( 32, 64 )
 
 [node name="Tree" type="StaticBody2D"]
+z_index = -2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

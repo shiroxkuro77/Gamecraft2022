@@ -12,7 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_ready == false:
 		return
 		
@@ -24,7 +24,9 @@ func _process(delta):
 			#Deletes seed/tree
 			if lightning_ray.get_collider().name == "SeedBody":
 				lightning_ray.get_collider().get_parent().queue_free()
-	
+			if "Tree" in lightning_ray.get_collider().name:
+				#print(lightning_ray.get_collider())
+				lightning_ray.get_collider().get_parent().remove_child(lightning_ray.get_collider())
 	elif Input.is_action_just_pressed("execute"):
 		$AnimatedSprite.show()
 		$LightningTimer.start()

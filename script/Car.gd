@@ -36,8 +36,9 @@ func _process(delta):
 		elif moving and (not front_ray.is_colliding()):
 			MoveDirection()
 		elif collide_ray.is_colliding():
-			print(collide_ray.get_collider())
-			position.y -= unitBlock
+			#print(collide_ray.get_collider())
+			if not collide_ray.get_collider().name in "Platform":
+				position.y -= unitBlock
 
 
 func start_moving():
