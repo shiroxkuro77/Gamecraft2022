@@ -31,9 +31,12 @@ func _process(_delta):
 				#Destroy tree
 				lightning_ray.get_collider().burn()
 #				lightning_ray.get_collider().get_parent().remove_child(lightning_ray.get_collider())
+
+
 	elif Input.is_action_just_pressed("execute"):
 		$AnimatedSprite.show()
 		$LightningTimer.start()
 		$AnimatedSprite.play()
+		$ThunderSound.play()
 		has_lightning = true
 		

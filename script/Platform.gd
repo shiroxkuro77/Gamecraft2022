@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var initial_ypos
-var max_block_distance = 6
+var max_block_distance = 5
 var unitBlock = 64
 const TIME_PERIOD = 0.5
 var yDirection = "up"
