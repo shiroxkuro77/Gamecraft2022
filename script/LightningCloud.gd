@@ -29,8 +29,8 @@ func _process(_delta):
 				#lightning_ray.get_collider().get_parent().queue_free()
 			if "Tree" in lightning_ray.get_collider().name:
 				#Destroy tree
-				
-				lightning_ray.get_collider().get_parent().remove_child(lightning_ray.get_collider())
+				lightning_ray.get_collider().burn()
+#				lightning_ray.get_collider().get_parent().remove_child(lightning_ray.get_collider())
 	elif Input.is_action_just_pressed("execute"):
 		$AnimatedSprite.show()
 		$LightningTimer.start()

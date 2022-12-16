@@ -18,9 +18,9 @@ func _timer(delta):
 
 
 func _process(delta):
-	print($BurningSprite.is_playing())
-	if died and not $BurningSprite.is_playing():
+	if died and $BurningTimer.is_stopped():
 		get_parent().queue_free()
+		
 	if _timer(delta):
 		if currPos == null:
 			currPos = global_position
@@ -57,7 +57,8 @@ func _on_Area2D_body_entered(body):
 		get_parent().queue_free()
 
 func burn_and_kill_self():
-	$SpriteG3.hide();
-	$BurningSprite.show();
-	$BurningSprite.play();
+	$SpriteG3.hide()
+	$BurningSprite.show()
+	$BurningSprite.play()
+	$BurningTimer.start()
 	died = true
