@@ -78,8 +78,8 @@ func _process(delta):
 		elif moving and (not front_ray.is_colliding()):
 			MoveDirection()
 		elif collide_ray.is_colliding():
-			#print(collide_ray.get_collider())
-			#if not get_parent().name in "Platform":
+			if collide_ray.get_collider().name == "GoalFlag":
+				emit_signal("reachedGoal")	
 			position.y -= unitBlock
 		
 

@@ -23,7 +23,7 @@ extents = Vector2( 32, 64 )
 extents = Vector2( 32, 24 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 11.625, 14.25 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
