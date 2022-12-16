@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/Background_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=2]
 [ext_resource path="res://scene/GoalFlag.tscn" type="PackedScene" id=3]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/arrows/arrow_reset.png" type="Texture" id=5]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://script/level_script.gd" type="Script" id=7]
 [ext_resource path="res://scene/CloudNoTL.tscn" type="PackedScene" id=8]
@@ -448,12 +449,12 @@ position = Vector2( 95, 480 )
 position = Vector2( 992, 352 )
 
 [node name="ResetButton" type="Button" parent="."]
-margin_left = 960.0
+margin_left = 993.0
 margin_top = 16.0
-margin_right = 1064.0
-margin_bottom = 64.0
+margin_right = 1069.0
+margin_bottom = 86.0
 custom_fonts/font = SubResource( 29 )
-text = "Reset"
+icon = ExtResource( 5 )
 
 [node name="ReadyScreen" type="ColorRect" parent="."]
 margin_right = 1088.0
