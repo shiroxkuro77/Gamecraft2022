@@ -8,7 +8,7 @@ onready var currNode
 func _ready():
 	currNode = TreeNode
 	for child in get_children():
-		if not child == TreeNode:
+		if child != TreeNode and child != $SwitchCloudSound:
 			remove_child(child)
 			
 
@@ -19,7 +19,6 @@ func set_ready():
 		LightningNode.set_ready()
 	if TornadoNode:
 		TornadoNode.set_ready()
-	
 
 func _on_LightningCloud_switchToLightning():
 	pass
@@ -27,25 +26,33 @@ func _on_LightningCloud_switchToLightning():
 func _on_LightningCloud_switchToTornado():
 	TornadoNode.position = LightningNode.position
 	add_child(TornadoNode)
+	LightningNode.get_node("ThunderSound").stop()
 	remove_child(LightningNode)
+	$SwitchCloudSound.play()
 
 
 func _on_LightningCloud_switchToTree():
 	TreeNode.position = LightningNode.position
 	add_child(TreeNode)
+	LightningNode.get_node("ThunderSound").stop()
 	remove_child(LightningNode)
+	$SwitchCloudSound.play()
 
 
 func _on_TreeCloud_switchToLightning():
 	LightningNode.position = TreeNode.position
 	add_child(LightningNode)
+	TreeNode.get_node("SeedImpactSound").stop()
 	remove_child(TreeNode)
+	$SwitchCloudSound.play()
 
 
 func _on_TreeCloud_switchToTornado():
 	TornadoNode.position = TreeNode.position
 	add_child(TornadoNode)
+	TreeNode.get_node("SeedImpactSound").stop()
 	remove_child(TreeNode)
+	$SwitchCloudSound.play()
 
 
 func _on_TreeCloud_switchToTree():
@@ -55,7 +62,9 @@ func _on_TreeCloud_switchToTree():
 func _on_TornadoCloud_switchToLightning():
 	LightningNode.position = TornadoNode.position
 	add_child(LightningNode)
+	TornadoNode.get_node("WindSound").stop()
 	remove_child(TornadoNode)
+	$SwitchCloudSound.play()
 
 
 func _on_TornadoCloud_switchToTornado():
@@ -65,4 +74,6 @@ func _on_TornadoCloud_switchToTornado():
 func _on_TornadoCloud_switchToTree():
 	TreeNode.position = TornadoNode.position
 	add_child(TreeNode)
+	TornadoNode.get_node("WindSound").stop()
 	remove_child(TornadoNode)
+	$SwitchCloudSound.play()

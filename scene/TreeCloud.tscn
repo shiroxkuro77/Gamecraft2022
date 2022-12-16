@@ -2,7 +2,7 @@
 
 [ext_resource path="res://script/TreeCloud.gd" type="Script" id=1]
 [ext_resource path="res://assets/clouds/cloud-green-v2(128x64).png" type="Texture" id=2]
-[ext_resource path="res://audio/mixkit-heavy-fall-into-mud-753.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/grass.wav" type="AudioStream" id=3]
 
 [node name="TreeCloud" type="Node2D"]
 script = ExtResource( 1 )

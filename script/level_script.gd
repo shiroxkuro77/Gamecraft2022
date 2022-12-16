@@ -10,6 +10,7 @@ var is_win = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$BackgroundMusic.play()
 	$WinScreen.hide()
 	pass # Replace with function body.
 
@@ -38,6 +39,7 @@ func _on_ResetButton_pressed():
 
 func _on_Car_reachedGoal():
 	if is_win == false:
+		$BackgroundMusic.stop()
 		$Car.play_win_sound()
 	is_win = true
 	$WinScreen.show()

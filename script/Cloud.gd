@@ -28,6 +28,7 @@ func _process(delta):
 			global_position.x += unitBlock
 	elif Input.is_action_just_pressed("z"):
 		emit_signal("switchToTree")
+		
 	elif Input.is_action_just_pressed("x"):
 		emit_signal("switchToTornado")
 	elif Input.is_action_just_pressed("c"):

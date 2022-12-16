@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Move-Forward.mp3-65fcdc4af3bf3ab661b3930c08938868.mp3str"
+
+[deps]
+
+source_file="res://audio/Move-Forward.mp3"
+dest_files=[ "res://.import/Move-Forward.mp3-65fcdc4af3bf3ab661b3930c08938868.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

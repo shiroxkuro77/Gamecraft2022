@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scene/LightningCloud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/PersistentCloud.gd" type="Script" id=2]
 [ext_resource path="res://scene/TreeCloud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/TornadoCloud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/mixkit-heavy-fall-into-mud-753.wav" type="AudioStream" id=5]
 
 [node name="Cloud" type="Node2D"]
 script = ExtResource( 2 )
@@ -13,6 +14,9 @@ script = ExtResource( 2 )
 [node name="TreeCloud" parent="." instance=ExtResource( 3 )]
 
 [node name="TornadoCloud" parent="." instance=ExtResource( 4 )]
+
+[node name="SwitchCloudSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="switchToLightning" from="LightningCloud" to="." method="_on_LightningCloud_switchToLightning"]
 [connection signal="switchToTornado" from="LightningCloud" to="." method="_on_LightningCloud_switchToTornado"]
