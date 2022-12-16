@@ -67,7 +67,7 @@ func _process(delta):
 		global_position.y = preposy
 	
 	if _timer(delta):
-		if front_ray.is_colliding():
+		if front_ray.is_colliding() and front_ray.get_collider():
 			#Deletes tornado
 			if front_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
@@ -77,7 +77,7 @@ func _process(delta):
 				MoveDirection()
 				emit_signal("reachedGoal")	
 				return
-		if ground_ray.is_colliding():
+		if ground_ray.is_colliding() and ground_ray.get_collider():
 			if ground_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				ground_ray.get_collider().get_parent().queue_free()
@@ -124,3 +124,5 @@ func MoveDirection():
 	elif Direction == "Right":
 		position.x += unitBlock
 
+func play_win_sound():
+	$WinSound.play()

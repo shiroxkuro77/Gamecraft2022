@@ -495,6 +495,10 @@ font_data = ExtResource( 3 )
 size = 24
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=34]
+size = 24
+font_data = ExtResource( 3 )
+
 [node name="Level3" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -524,7 +528,7 @@ position = Vector2( 416, 160 )
 position = Vector2( 96, 416 )
 
 [node name="GoalFlag" parent="." instance=ExtResource( 4 )]
-position = Vector2( 992, 288 )
+position = Vector2( 1056, 288 )
 
 [node name="Platform" parent="." instance=ExtResource( 6 )]
 position = Vector2( 896, 672 )
@@ -572,6 +576,33 @@ margin_right = 320.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 33 )
 text = "Level 3: Forest"
+
+[node name="WinScreen" type="ColorRect" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 449.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="WinScreen"]
+margin_right = 448.0
+margin_bottom = 193.0
+border_color = Color( 1, 1, 1, 1 )
+border_width = 4.0
+editor_only = false
+
+[node name="CongratsLabel" type="Label" parent="WinScreen"]
+margin_right = 448.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 34 )
+text = "Congratulations!
+You have cleared the level!
+
+
+Press [Space] to continue"
+align = 1
+valign = 1
 
 [connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]

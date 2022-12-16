@@ -420,6 +420,10 @@ font_data = ExtResource( 4 )
 size = 24
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=31]
+size = 24
+font_data = ExtResource( 4 )
+
 [node name="Level4" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -486,6 +490,33 @@ margin_right = 320.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 30 )
 text = "Level 4: Highway to Heaven"
+
+[node name="WinScreen" type="ColorRect" parent="."]
+visible = false
+margin_left = 320.0
+margin_top = 256.0
+margin_right = 768.0
+margin_bottom = 449.0
+color = Color( 0, 0, 0, 0.784314 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="WinScreen"]
+margin_right = 448.0
+margin_bottom = 193.0
+border_color = Color( 1, 1, 1, 1 )
+border_width = 4.0
+editor_only = false
+
+[node name="CongratsLabel" type="Label" parent="WinScreen"]
+margin_right = 448.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 31 )
+text = "Congratulations!
+You have cleared the level!
+
+
+Press [Space] to continue"
+align = 1
+valign = 1
 
 [connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
