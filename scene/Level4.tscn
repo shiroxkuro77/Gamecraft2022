@@ -419,7 +419,7 @@ font_data = ExtResource( 4 )
 size = 24
 font_data = ExtResource( 4 )
 
-[node name="Level4" type="Node2D"]
+[node name="Level5" type="Node2D"]
 script = ExtResource( 7 )
 
 [node name="Cloud" parent="." instance=ExtResource( 5 )]
@@ -484,7 +484,7 @@ margin_top = 64.0
 margin_right = 320.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 30 )
-text = "Level 4: Highway to Heaven"
+text = "Level 5: Down the Forest"
 
 [connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
