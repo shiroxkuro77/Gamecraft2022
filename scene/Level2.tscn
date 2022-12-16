@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=2]
 [ext_resource path="res://scene/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scene/GoalFlag.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scene/Cloud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/CloudNoL.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://script/level_script.gd" type="Script" id=7]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=8]
@@ -426,9 +426,6 @@ font_data = ExtResource( 8 )
 [node name="Level2" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Cloud" parent="." instance=ExtResource( 5 )]
-position = Vector2( 544, 96 )
-
 [node name="Ground" type="TileMap" parent="."]
 position = Vector2( 256, 320 )
 tile_set = SubResource( 27 )
@@ -487,6 +484,9 @@ margin_right = 320.0
 margin_bottom = 96.0
 custom_fonts/font = SubResource( 37 )
 text = "Level 2: Sheltered"
+
+[node name="Cloud" parent="." instance=ExtResource( 5 )]
+position = Vector2( 478, 96 )
 
 [connection signal="reachedGoal" from="Car" to="." method="_on_Car_reachedGoal"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
