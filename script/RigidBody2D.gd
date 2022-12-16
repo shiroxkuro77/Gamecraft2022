@@ -55,6 +55,8 @@ func _on_Area2D_body_entered(body):
 		touchGround = true
 	if body.name == "Platform":
 		get_parent().queue_free()
+	if body.name == "SeedBody" and body != self:
+		get_parent().queue_free()
 
 func burn_and_kill_self():
 	$SpriteG3.hide()
