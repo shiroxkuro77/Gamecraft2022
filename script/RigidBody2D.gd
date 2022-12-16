@@ -8,6 +8,7 @@ var time = 0
 var TIME_PERIOD = 0.1
 var touchGround = false
 var died = false
+var animationfinshed = false
 	
 func _timer(delta):
 	time += delta
@@ -19,7 +20,7 @@ func _timer(delta):
 
 func _process(delta):
 	print($BurningSprite.is_playing())
-	if died and not $BurningSprite.is_playing():
+	if died and animationfinshed:
 		get_parent().queue_free()
 	if _timer(delta):
 		if currPos == null:
@@ -61,3 +62,7 @@ func burn_and_kill_self():
 	$BurningSprite.show();
 	$BurningSprite.play();
 	died = true
+
+
+func _on_BurningSprite_animation_finished():
+	animationfinshed = true
