@@ -30,8 +30,8 @@ func _timer(delta):
 func _process(delta):
 	isOnPlatform = false
 	
-	if ground_ray.is_colliding() and collide_ray.get_collider():
-		if ground_ray.get_collider() and ground_ray.get_collider().name in "Platform":
+	if ground_ray.is_colliding():
+		if ground_ray.get_collider().name in "Platform":
 			if not get_parent().name in "Platform":
 				#change parent to platform
 				var preposx = global_position.x
@@ -42,8 +42,7 @@ func _process(delta):
 				global_position.x = preposx
 				global_position.y = preposy
 			isOnPlatform = true
-			
-	if collide_ray.is_colliding() and collide_ray.get_collider():
+	if collide_ray.is_colliding():
 		if collide_ray.get_collider().name in "Platform":
 			if not get_parent().name in "Platform":
 				position.y -= unitBlock
@@ -56,6 +55,7 @@ func _process(delta):
 				global_position.x = preposx
 				global_position.y = preposy
 			isOnPlatform = true
+			
 	if not isOnPlatform:
 		#swap back parent
 		var preposx = global_position.x
@@ -65,7 +65,7 @@ func _process(delta):
 		new_parent.add_child(self)
 		global_position.x = preposx
 		global_position.y = preposy
-
+	
 	if _timer(delta):
 		if front_ray.is_colliding():
 			#Deletes tornado
@@ -83,7 +83,7 @@ func _process(delta):
 				emit_signal("reachedGoal")
 				return
 				
-		if not ground_ray.is_colliding():
+		if not ground_ray.is_colliding() and not get_parent().name in "Platform":
 			position.y += unitBlock
 		elif moving and (not front_ray.is_colliding()):
 			MoveDirection()
