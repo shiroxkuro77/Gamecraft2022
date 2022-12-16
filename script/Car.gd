@@ -74,6 +74,7 @@ func _process(delta):
 				front_ray.get_collider().get_parent().queue_free()
 				return
 			if front_ray.get_collider().name == "GoalFlag":
+				MoveDirection()
 				emit_signal("reachedGoal")	
 				return
 		if ground_ray.is_colliding():
@@ -82,6 +83,7 @@ func _process(delta):
 				ground_ray.get_collider().get_parent().queue_free()
 				return
 			elif ground_ray.get_collider().name == "GoalFlag":
+				position.y += unitBlock
 				emit_signal("reachedGoal")
 				return
 				
