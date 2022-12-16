@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/Background_2.png" type="Texture" id=1]
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scene/Cloud.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=8]
 [ext_resource path="res://script/level_script.gd" type="Script" id=9]
+[ext_resource path="res://assets/arrows/arrow_reset.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -482,7 +483,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 5/shapes = [  ]
 5/z_index = 0
 
-[sub_resource type="DynamicFont" id=31]
+[sub_resource type="DynamicFont" id=34]
 size = 24
 font_data = ExtResource( 3 )
 
@@ -541,12 +542,12 @@ position = Vector2( 544, 320 )
 position = Vector2( 672, 512 )
 
 [node name="ResetButton" type="Button" parent="."]
-margin_left = 960.0
+margin_left = 993.0
 margin_top = 16.0
-margin_right = 1064.0
-margin_bottom = 64.0
-custom_fonts/font = SubResource( 31 )
-text = "Reset"
+margin_right = 1069.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 34 )
+icon = ExtResource( 10 )
 
 [node name="ReadyScreen" type="ColorRect" parent="."]
 margin_right = 1088.0
