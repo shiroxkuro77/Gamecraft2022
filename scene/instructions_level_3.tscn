@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/Background_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/clouds/cloud-green-v2(128x64).png" type="Texture" id=7]
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=8]
+[ext_resource path="res://assets/label_theme1.tres" type="Theme" id=9]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="TileSet" id=2]
@@ -130,10 +131,6 @@
 size = 24
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 10 )
-
 [sub_resource type="DynamicFont" id=7]
 size = 24
 font_data = ExtResource( 10 )
@@ -188,7 +185,7 @@ rect_pivot_offset = Vector2( 244, 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "Press [SPACE]
+text = "Press [Space]
 to destroy a tree!"
 
 [node name="LightningSprite" type="Sprite" parent="."]
@@ -196,14 +193,6 @@ light_mask = 0
 position = Vector2( 215, 293 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
-
-[node name="Button" type="Button" parent="."]
-margin_left = 339.0
-margin_top = 520.0
-margin_right = 578.0
-margin_bottom = 568.0
-custom_fonts/font = SubResource( 6 )
-text = "Proceed to level"
 
 [node name="CloudSwapLbl" type="Label" parent="."]
 margin_left = 377.0
@@ -287,4 +276,11 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="ContinueLbl" type="Label" parent="."]
+margin_left = 244.0
+margin_top = 527.0
+margin_right = 566.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 244, 13 )
+theme = ExtResource( 9 )
+text = "Press [Space] to proceed"

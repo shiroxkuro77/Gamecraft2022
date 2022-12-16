@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_ready == false and Input.is_key_pressed(KEY_ENTER):
+	if is_ready == false and Input.is_action_just_released("execute"):
 		is_ready = true
 		$ReadyScreen.hide()
 		$Car.start_moving()

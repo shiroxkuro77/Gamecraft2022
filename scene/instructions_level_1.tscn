@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/flag/flag(64x64).png" type="Texture" id=4]
 [ext_resource path="res://assets/clouds/cloud-green-v2(128x64).png" type="Texture" id=5]
 [ext_resource path="res://assets/Background_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/label_theme1.tres" type="Theme" id=7]
 [ext_resource path="res://assets/terrain/land_terrain(64x64).png" type="Texture" id=8]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/trees/seed(64x64).png" type="Texture" id=11]
@@ -202,10 +203,6 @@ resource_local_to_scene = true
 size = 24
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 10 )
-
 [node name="instructions_level_1" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -299,7 +296,7 @@ rect_pivot_offset = Vector2( 244, 13 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 30 )
-text = "Press [SPACE] to 
+text = "Press [Space] to
 drop a seed..."
 
 [node name="TreeLbl" type="Label" parent="."]
@@ -332,12 +329,11 @@ text = "Help the car
 reach the goal!"
 align = 2
 
-[node name="Button" type="Button" parent="."]
-margin_left = 557.0
-margin_top = 564.0
-margin_right = 796.0
-margin_bottom = 612.0
-custom_fonts/font = SubResource( 6 )
-text = "Proceed to level"
-
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="ContinueLbl" type="Label" parent="."]
+margin_left = 483.0
+margin_top = 592.0
+margin_right = 805.0
+margin_bottom = 625.0
+rect_pivot_offset = Vector2( 244, 13 )
+theme = ExtResource( 7 )
+text = "Press [Space] to proceed"

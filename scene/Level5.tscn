@@ -508,7 +508,7 @@ margin_top = 344.0
 margin_right = 681.0
 margin_bottom = 369.0
 custom_fonts/font = SubResource( 30 )
-text = "Press [Enter] to start"
+text = "Press [Space] to start"
 
 [node name="LevelLabel" type="Label" parent="ReadyScreen"]
 margin_left = 64.0
