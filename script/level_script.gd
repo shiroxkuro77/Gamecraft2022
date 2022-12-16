@@ -21,7 +21,7 @@ func _process(delta):
 		$Car.start_moving()
 		$Cloud.set_ready()
 		
-	if is_win == true and Input.is_action_just_pressed("execute"):
+	if is_win == true and Input.is_action_just_released("execute"):
 		if name == "Level1":
 			get_tree().change_scene("res://scene/instructions_level_2.tscn")
 		if name == "Level2":
