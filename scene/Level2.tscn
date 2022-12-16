@@ -8,6 +8,7 @@
 [ext_resource path="res://scene/Car.tscn" type="PackedScene" id=6]
 [ext_resource path="res://script/level_script.gd" type="Script" id=7]
 [ext_resource path="res://fonts/connection/Connection.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/arrows/arrow_reset.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -461,12 +462,12 @@ position = Vector2( 544, 544 )
 position = Vector2( 320, 672 )
 
 [node name="ResetButton" type="Button" parent="."]
-margin_left = 960.0
+margin_left = 993.0
 margin_top = 16.0
-margin_right = 1064.0
-margin_bottom = 64.0
+margin_right = 1069.0
+margin_bottom = 86.0
 custom_fonts/font = SubResource( 38 )
-text = "Reset"
+icon = ExtResource( 9 )
 
 [node name="ReadyScreen" type="ColorRect" parent="."]
 margin_right = 1088.0

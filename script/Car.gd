@@ -72,14 +72,18 @@ func _process(delta):
 			if front_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				front_ray.get_collider().get_parent().queue_free()
+				return
 			if front_ray.get_collider().name == "GoalFlag":
+				MoveDirection()
 				emit_signal("reachedGoal")	
-		elif ground_ray.is_colliding() and ground_ray.get_collider():
+				return
+		if ground_ray.is_colliding() and ground_ray.get_collider():
 			if ground_ray.get_collider().name == "TornadoBody":
 				ChangeDirection()
 				ground_ray.get_collider().get_parent().queue_free()
 				return
 			elif ground_ray.get_collider().name == "GoalFlag":
+				position.y += unitBlock
 				emit_signal("reachedGoal")
 				return
 				
