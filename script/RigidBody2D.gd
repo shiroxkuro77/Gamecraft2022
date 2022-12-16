@@ -1,10 +1,13 @@
 extends RigidBody2D
 
+class_name Seed
+
 var currPos
 var isMoving = true
 var time = 0
 var TIME_PERIOD = 0.1
 var touchGround = false
+var died = false
 	
 func _timer(delta):
 	time += delta
@@ -15,6 +18,9 @@ func _timer(delta):
 
 
 func _process(delta):
+	print($BurningSprite.is_playing())
+	if died and not $BurningSprite.is_playing():
+		get_parent().queue_free()
 	if _timer(delta):
 		if currPos == null:
 			currPos = global_position
@@ -49,3 +55,9 @@ func _on_Area2D_body_entered(body):
 		touchGround = true
 	if body.name == "Platform":
 		get_parent().queue_free()
+
+func burn_and_kill_self():
+	$SpriteG3.hide();
+	$BurningSprite.show();
+	$BurningSprite.play();
+	died = true

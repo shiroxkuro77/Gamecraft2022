@@ -44,9 +44,7 @@ func _on_Car_reachedGoal():
 		get_tree().change_scene("res://scene/instructions_level_2.tscn")
 	if name == "Level2":
 		get_tree().change_scene("res://scene/instructions_level_3.tscn")
-		
 	if name == "Level3":
-		get_tree().change_scene("res://scene/Level4.tscn")
-		
+		get_tree().change_scene("res://scene/Level4.tscn")	
 	if name == "Level4":
 		get_tree().change_scene("res://scene/End.tscn")
