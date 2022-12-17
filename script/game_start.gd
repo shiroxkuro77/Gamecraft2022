@@ -7,5 +7,7 @@ func _ready():
 	OS.set_window_position(screen_size*0.5 - window_size*0.5)
 	
 
-func _on_start_game_button_pressed():
-	get_tree().change_scene("res://scene/instructions_level_1.tscn")
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if Input.is_action_just_released("execute"):
+		get_tree().change_scene("res://scene/instructions_level_1.tscn")
