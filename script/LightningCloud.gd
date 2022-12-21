@@ -20,7 +20,12 @@ func _process(_delta):
 		$AnimatedSprite.stop()
 		$AnimatedSprite.hide()
 		has_lightning = false
+	
+				
+	elif Input.is_action_just_pressed("execute"):
 		if lightning_ray.is_colliding():
+			changeSpriteSize(lightning_ray, lightning_ray.get_collision_point())
+		
 			#Deletes seed/tree
 			if lightning_ray.get_collider().name == "SeedBody":
 				#Play tree animation
@@ -28,10 +33,7 @@ func _process(_delta):
 			if "Tree" in lightning_ray.get_collider().name:
 				#Destroy tree
 				lightning_ray.get_collider().burn()
-				
-	elif Input.is_action_just_pressed("execute"):
-		if lightning_ray.is_colliding():
-			changeSpriteSize(lightning_ray, lightning_ray.get_collision_point())
+		
 		$AnimatedSprite.show()
 		$LightningTimer.start()
 		$AnimatedSprite.play()

@@ -7,7 +7,7 @@ var initial_pos = position.x
 var moving = false
 var unitBlock = 64
 var time = 0
-const TIME_PERIOD = 0.3
+const TIME_PERIOD = 0.1
 var Direction = "Right"
 var isOnPlatform = false
 var oldParent
