@@ -11,6 +11,7 @@ const TIME_PERIOD = 0.3
 var Direction = "Right"
 var isOnPlatform = false
 var oldParent
+var freeze = false
 signal reachedGoal
 
 # Called when the node enters the scene tree for the first time.
@@ -28,6 +29,9 @@ func _timer(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if freeze:
+		return
+	
 	isOnPlatform = false
 	
 	if ground_ray.is_colliding() and ground_ray.get_collider():
@@ -76,6 +80,7 @@ func _process(delta):
 			if front_ray.get_collider().name == "GoalFlag":
 				MoveDirection()
 				emit_signal("reachedGoal")	
+				freeze = true
 				return
 		if ground_ray.is_colliding() and ground_ray.get_collider():
 			if ground_ray.get_collider().name == "TornadoBody":
@@ -85,6 +90,7 @@ func _process(delta):
 			elif ground_ray.get_collider().name == "GoalFlag":
 				position.y += unitBlock
 				emit_signal("reachedGoal")
+				freeze = true
 				return
 				
 		if not ground_ray.is_colliding() and not get_parent().name in "Platform":
@@ -93,7 +99,8 @@ func _process(delta):
 			MoveDirection()
 		elif collide_ray.is_colliding():
 			if collide_ray.get_collider().name == "GoalFlag":
-				emit_signal("reachedGoal")	
+				emit_signal("reachedGoal")
+				freeze = true	
 			position.y -= unitBlock
 		
 
